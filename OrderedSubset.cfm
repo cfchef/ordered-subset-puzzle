@@ -35,7 +35,7 @@
 	{
 		return subset.filter(function(e) {
 			return structKeyExists(set, e);
-		}).map(function(v, i) {
+		}).map(function(v) {
 			set[v].label = v;
 			return set[v];
 		});
