@@ -33,12 +33,9 @@
 	public array function getOrderedSubset(required struct set, required array subset)
 		output="false"
 	{
-		return subset.filter(function(e) {
-			return structKeyExists(set, e);
-		}).map(function(v) {
-			set[v].label = v;
-			return set[v];
-		});
+		return subset
+			.filter(function(e) { return structKeyExists(set, e); })
+			.map(function(v) { set[v].label = v; return set[v]; });
 	}
 
 </cfscript>
