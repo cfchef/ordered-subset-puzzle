@@ -28,8 +28,8 @@ def set = [
 def subset = ["four", "two"]
 
 List orderedSubset(Map set, List subset) {
-    return subset.findAll { set.containsKey(it) }.inject([]) { list, entry ->
-        set[entry]?.label = entry; list << set[entry]
+    return subset.findAll { set.containsKey(it) }.inject([]) { list, v ->
+        set[v]?.label = v; list << set[v]
     }   
 }
 
