@@ -27,7 +27,7 @@ def set = [
 
 def subset = ["four", "two"]
 
-def List orderedSubset(Map set, List subset) {
+List orderedSubset(Map set, List subset) {
     List list = []
     subset.findAll { set.containsKey(it) }.each { e -> set[e].label = e; list << set[e] }
     
