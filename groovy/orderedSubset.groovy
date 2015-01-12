@@ -28,10 +28,9 @@ def set = [
 def subset = ["four", "two"]
 
 List orderedSubset(Map set, List subset) {
-    List list = []
-    subset.findAll { set.containsKey(it) }.each { set[it]?.label = it; list << set[it] }
-    
-    return list
+    return subset.findAll { set.containsKey(it) }.inject([]) { list, entry ->
+        set[entry]?.label = entry; list << set[entry]
+    }   
 }
 
 println(orderedSubset(set, subset))
