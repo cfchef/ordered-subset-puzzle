@@ -35,3 +35,15 @@ List orderedSubset(Map set, List subset) {
 }
 
 println(orderedSubset(set, subset))
+
+//*** Tests ***//
+// args are of respected types
+assert set.getClass() == java.util.LinkedHashMap
+assert subset.getClass() == java.util.ArrayList
+// result is ArrayList
+assert orderedSubset(set, subset).getClass() == java.util.ArrayList
+// result Maps contain key: label
+assert orderedSubset(set, subset)[0].containsKey("label") == true
+assert orderedSubset(set, subset)[1].containsKey("label") == true
+// subset list elements not found in set maps are not persisted into result
+assert orderedSubset(set, ["four", "two", "twelve"]).size() == 2
