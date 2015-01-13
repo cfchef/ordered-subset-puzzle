@@ -10,14 +10,6 @@ component extends="testbox.system.BaseSpec"{
     // All suites go in here
     function run( testResults, testBox ){
         describe("Ordered Subset", function() {
-            describe("Arguments", function() {
-                it("[set] should be a structure", function() {
-                    expect(set).toBeStruct();
-                });
-                it("[subset] should be an array", function() {
-                    expect(subset).toBeArray();
-                });
-            });
             describe("Function Result", function() {
                 it("should return an array", function() {
                     expect(getOrderedSubset(set, subset)).toBeArray();
