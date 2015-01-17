@@ -34,7 +34,7 @@
 		output="false"
 	{
 		return subset
-			.filter(function(e) { return structKeyExists(set, e); })
+			.filter(function(e) { return set.keyExists(e); })
 			.map(function(v) { set[v].label = v; return set[v]; });
 	}
 
