@@ -27,13 +27,19 @@ def set = [
 
 def subset = ["four", "two"]
 
+/*
+* Given valid parameters (Map set, List subset), find all Maps within [set] that
+* match the elements within [subset] by key and inject those Maps into List "list"
+* after adding key "label" to the matched Maps and setting the key value to the
+* current element value of [subset]. Return "list".
+*/
 List orderedSubset(Map set, List subset) {
-    return subset.findAll { set.containsKey(it) }.inject([]) { list, v ->
-        set[v]?.label = v; list << set[v]
+    subset.findAll { set.containsKey(it) }.inject([]) { list, v ->
+        set[v].label = v; list << set[v]
     }   
 }
 
-println(orderedSubset(set, subset))
+println orderedSubset(set, subset)
 
 //*** Tests ***//
 // result is ArrayList
